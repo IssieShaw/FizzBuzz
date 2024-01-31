@@ -19,7 +19,7 @@ namespace FizzBuzzTest
             string result = await buzzOperations.CalculateAsync(number);
 
             // Assert
-            Assert.AreEqual("Fizz", result);
+            Assert.AreEqual("Buzz", result);
         }
 
         [TestMethod]

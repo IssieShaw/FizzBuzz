@@ -4,8 +4,14 @@ namespace FizzBuzzApp
     {
         public async Task<string> CalculateAsync(int number)
         {
-            // Return placeholder
-            return "Fizz";
+            if (number % 3 == 0)
+            {
+                return "Fizz";
+            }
+            else
+            {
+                return number.ToString();
+            }
         }
     }
 }

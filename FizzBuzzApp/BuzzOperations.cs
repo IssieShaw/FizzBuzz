@@ -5,8 +5,14 @@ namespace FizzBuzzApp
     {
         public async Task<string> CalculateAsync(int number)
         {
-            // Return placeholder
-            return "Buzz";
+            if (number % 5 == 0)
+            {
+                return "Buzz";
+            }
+            else
+            {
+                return number.ToString();
+            }
         }
     }
 }
