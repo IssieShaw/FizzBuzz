@@ -53,5 +53,21 @@ namespace FizzBuzzTest
             Assert.AreEqual(1, result.Count); // Single result expected
             Assert.AreEqual(number.ToString(), result[0]);
         }
+
+        [TestMethod]
+        public async Task StartFizzBuzzCalculationsAsync_TestValid()
+        {
+            // Arrange
+            var fizzCalculator = new FizzOperations();
+            var buzzCalculator = new BuzzOperations();
+            var fizzBuzzCalculator = new FizzBuzzCalculator(fizzCalculator, buzzCalculator);
+
+            // Act
+            string[] results = await fizzBuzzCalculator.StartFizzBuzzCalculationsAsync();
+
+            // Assert with 10 hardcoded groups
+            Assert.AreEqual(10, results.Length);
+            Assert.IsTrue(results.All(groupResult => !string.IsNullOrEmpty(groupResult)));
+        }
     }
 }
