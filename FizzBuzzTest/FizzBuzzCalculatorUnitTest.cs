@@ -6,51 +6,35 @@ namespace FizzBuzzTest
     public class FizzBuzzCalculatorUnitTest
     {
         [TestMethod]
-        public async Task CalculateFizzBuzzAsync_FizzReturned()
+        public async Task StartFizzBuzzCalculationsAsync_ReturnsCorrectResults()
         {
             // Arrange
-            int number = 9;  // Example number divisible by 3
             var fizzCalculator = new FizzOperations();
             var buzzCalculator = new BuzzOperations();
             var fizzBuzzCalculator = new FizzBuzzCalculator(fizzCalculator, buzzCalculator);
 
             // Act
-            string result = await fizzBuzzCalculator.CalculateFizzBuzzAsync(number);
+            string[] results = await fizzBuzzCalculator.StartFizzBuzzCalculationsAsync();
 
             // Assert
-            Assert.AreEqual("Fizz", result);
+            Assert.AreEqual(10, results.Length); // Assuming 10 groups - hardcoded
+            Assert.IsTrue(results.All(groupResult => !string.IsNullOrEmpty(groupResult))); // Check not empty
         }
 
         [TestMethod]
-        public async Task CalculateFizzBuzzAsync_BuzzReturned()
+        public async Task CalculateFizzBuzzAsync_ReturnsValidResults()
         {
             // Arrange
-            int number = 10;  // Example number divisible by 5
             var fizzCalculator = new FizzOperations();
             var buzzCalculator = new BuzzOperations();
             var fizzBuzzCalculator = new FizzBuzzCalculator(fizzCalculator, buzzCalculator);
 
             // Act
-            string result = await fizzBuzzCalculator.CalculateFizzBuzzAsync(number);
+            List<string> result = await fizzBuzzCalculator.CalculateFizzBuzzAsync(1, 10);
 
-            // Assert
-            Assert.AreEqual("Buzz", result);
-        }
-
-        [TestMethod]
-        public async Task CalculateFizzBuzzAsync_FizzBuzzReturned()
-        {
-            // Arrange
-            int number = 15;  // Example number divisible by both 3 and 5
-            var fizzCalculator = new FizzOperations();
-            var buzzCalculator = new BuzzOperations();
-            var fizzBuzzCalculator = new FizzBuzzCalculator(fizzCalculator, buzzCalculator);
-
-            // Act
-            string result = await fizzBuzzCalculator.CalculateFizzBuzzAsync(number);
-
-            // Assert
-            Assert.AreEqual("FizzBuzz", result);
+            // Assert assuming the range 1-10, so 10 results expected
+            Assert.AreEqual(10, result.Count);
+            Assert.AreEqual("1 2 Fizz 4 Buzz Fizz 7 8 Fizz Buzz", string.Join(" ", result));
         }
 
         [TestMethod]
@@ -63,10 +47,11 @@ namespace FizzBuzzTest
             var fizzBuzzCalculator = new FizzBuzzCalculator(fizzCalculator, buzzCalculator);
 
             // Act
-            string result = await fizzBuzzCalculator.CalculateFizzBuzzAsync(number);
+            List<string> result = await fizzBuzzCalculator.CalculateFizzBuzzAsync(number, number);
 
             // Assert
-            Assert.AreEqual(number.ToString(), result);
+            Assert.AreEqual(1, result.Count); // Single result expected
+            Assert.AreEqual(number.ToString(), result[0]);
         }
     }
 }
