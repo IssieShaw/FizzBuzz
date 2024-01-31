@@ -13,10 +13,12 @@ One way to build and run:
 
 1. Clone the repository
 
+
     git clone https://github.com/IssieShaw/FizzBuzz.git
 
 2. Navigate to project directory
 3. Run command
+
 
     dotnet run --project .\FizzBuzzApp.csproj
 
