@@ -1,3 +1,5 @@
+using FizzBuzzApp;
+
 namespace FizzBuzzTest;
 
 [TestClass]

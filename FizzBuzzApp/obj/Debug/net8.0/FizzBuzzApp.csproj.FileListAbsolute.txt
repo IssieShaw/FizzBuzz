@@ -1,0 +1,15 @@
+C:\Users\UKGC\source\repos\FizzBuzz\FizzBuzz\FizzBuzzApp\bin\Debug\net8.0\FizzBuzzApp.exe
+C:\Users\UKGC\source\repos\FizzBuzz\FizzBuzz\FizzBuzzApp\bin\Debug\net8.0\FizzBuzzApp.deps.json
+C:\Users\UKGC\source\repos\FizzBuzz\FizzBuzz\FizzBuzzApp\bin\Debug\net8.0\FizzBuzzApp.runtimeconfig.json
+C:\Users\UKGC\source\repos\FizzBuzz\FizzBuzz\FizzBuzzApp\bin\Debug\net8.0\FizzBuzzApp.dll
+C:\Users\UKGC\source\repos\FizzBuzz\FizzBuzz\FizzBuzzApp\bin\Debug\net8.0\FizzBuzzApp.pdb
+C:\Users\UKGC\source\repos\FizzBuzz\FizzBuzz\FizzBuzzApp\obj\Debug\net8.0\FizzBuzzApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\UKGC\source\repos\FizzBuzz\FizzBuzz\FizzBuzzApp\obj\Debug\net8.0\FizzBuzzApp.AssemblyInfoInputs.cache
+C:\Users\UKGC\source\repos\FizzBuzz\FizzBuzz\FizzBuzzApp\obj\Debug\net8.0\FizzBuzzApp.AssemblyInfo.cs
+C:\Users\UKGC\source\repos\FizzBuzz\FizzBuzz\FizzBuzzApp\obj\Debug\net8.0\FizzBuzzApp.csproj.CoreCompileInputs.cache
+C:\Users\UKGC\source\repos\FizzBuzz\FizzBuzz\FizzBuzzApp\obj\Debug\net8.0\FizzBuzzApp.sourcelink.json
+C:\Users\UKGC\source\repos\FizzBuzz\FizzBuzz\FizzBuzzApp\obj\Debug\net8.0\FizzBuzzApp.dll
+C:\Users\UKGC\source\repos\FizzBuzz\FizzBuzz\FizzBuzzApp\obj\Debug\net8.0\refint\FizzBuzzApp.dll
+C:\Users\UKGC\source\repos\FizzBuzz\FizzBuzz\FizzBuzzApp\obj\Debug\net8.0\FizzBuzzApp.pdb
+C:\Users\UKGC\source\repos\FizzBuzz\FizzBuzz\FizzBuzzApp\obj\Debug\net8.0\FizzBuzzApp.genruntimeconfig.cache
+C:\Users\UKGC\source\repos\FizzBuzz\FizzBuzz\FizzBuzzApp\obj\Debug\net8.0\ref\FizzBuzzApp.dll
