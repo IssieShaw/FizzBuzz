@@ -16,7 +16,7 @@ namespace FizzBuzzTest
             var buzzOperations = new BuzzOperations();
 
             // Act
-            string result = await buzzOperations.CalculateFizzAsync(number);
+            string result = await buzzOperations.CalculateBuzzAsync(number);
 
             // Assert
             Assert.AreEqual("Fizz", result);
@@ -30,7 +30,7 @@ namespace FizzBuzzTest
             var buzzOperations = new BuzzOperations();
 
             // Act
-            string result = await buzzOperations.CalculateFizzAsync(number);
+            string result = await buzzOperations.CalculateBuzzAsync(number);
 
             // Assert
             Assert.AreEqual(number.ToString(), result);
