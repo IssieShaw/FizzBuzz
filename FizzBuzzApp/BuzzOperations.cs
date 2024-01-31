@@ -1,8 +1,9 @@
+
 namespace FizzBuzzApp
 {
-    public class BuzzOperations
+    public class BuzzOperations : IFizzBuzzOperations
     {
-        public async Task<string> CalculateBuzzAsync(int number)
+        public async Task<string> CalculateAsync(int number)
         {
             // Return placeholder
             return "Buzz";
