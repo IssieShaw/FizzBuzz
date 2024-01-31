@@ -23,7 +23,7 @@ One way to build and run:
     dotnet run --project .\FizzBuzzApp.csproj
 
 
-### Run unit tests
+### Run Unit Tests
 Navigate to the FizzBuzzTest directory and run:
 
     dotnet test
