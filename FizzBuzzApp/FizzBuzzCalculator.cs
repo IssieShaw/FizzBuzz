@@ -11,39 +11,77 @@ namespace FizzBuzzApp
             this.buzzOps = buzzOps;
         }
 
-        public async Task<string> CalculateFizzBuzzAsync(int number)
+        public async Task<string[]> StartFizzBuzzCalculationsAsync()
         {
-            Task<string> fizzTask = fizzOps.CalculateAsync(number);
-            Task<string> buzzTask = buzzOps.CalculateAsync(number);
+            // Divide the range for the task into 10 groups
+            int start = 1;
+            int end = 100;
+            int groupSize = (end - start + 1) / 10; 
 
-            // Wait for both tasks to complete
-            await Task.WhenAll(fizzTask, buzzTask);
+            // Create an array to store the results for each group
+            string[] results = new string[10];
 
-            string fizzResult = fizzTask.Result;
-            string buzzResult = buzzTask.Result;
-
-            var result = "";
-            bool isFizz = fizzResult == "Fizz";
-            bool isBuzz = buzzResult == "Buzz";
-
-            if (isFizz && isBuzz)
+            // Use Parallel.For for async processing
+            Parallel.For(0, 10, async i =>
             {
-                result = fizzResult + buzzResult;
-            }
-            else if (isFizz)
+                int groupStart = start + i * groupSize;
+                int groupEnd;
+                if (i == 9)
+                {
+                    groupEnd = end;
+                }
+                else
+                {
+                    groupEnd = groupStart + groupSize - 1;
+                }
+
+                // Calculate FizzBuzz for the current group
+                results[i] = string.Join(" ", await CalculateFizzBuzzAsync(groupStart, groupEnd));
+            });
+
+            return results;
+        }
+
+        public async Task<List<string>> CalculateFizzBuzzAsync(int start, int end)
+        {
+            List<string> results = new List<string>();
+
+            for (int number = start; number <= end; number++)
             {
-                result = fizzResult;
-            }
-            else if (isBuzz)
-            {
-                result = buzzResult;
-            }
-            else
-            {
-                result = number.ToString();
+                Task<string> fizzTask = fizzOps.CalculateAsync(number);
+                Task<string> buzzTask = buzzOps.CalculateAsync(number);
+
+                // Wait for both tasks to complete
+                await Task.WhenAll(fizzTask, buzzTask);
+
+                string fizzResult = fizzTask.Result;
+                string buzzResult = buzzTask.Result;
+
+                var result = "";
+                bool isFizz = fizzResult == "Fizz";
+                bool isBuzz = buzzResult == "Buzz";
+
+                if (isFizz && isBuzz)
+                {
+                    result = fizzResult + buzzResult;
+                }
+                else if (isFizz)
+                {
+                    result = fizzResult;
+                }
+                else if (isBuzz)
+                {
+                    result = buzzResult;
+                }
+                else
+                {
+                    result = number.ToString();
+                }
+
+                results.Add(result);
             }
 
-            return result;
+            return results;
         }
     }
 }
